@@ -2,6 +2,7 @@ package com.example.dictionarykotlinmvvm.feature_dictionary.di
 
 import android.app.Application
 import androidx.room.Room
+import com.example.dictionarykotlinmvvm.feature_dictionary.data.local.Converters
 import com.example.dictionarykotlinmvvm.feature_dictionary.data.local.WordInfoDatabase
 import com.example.dictionarykotlinmvvm.feature_dictionary.data.remote.DictionaryApi
 import com.example.dictionarykotlinmvvm.feature_dictionary.data.repository.WordInfoRepositoryImp
@@ -38,10 +39,10 @@ object WordInfoModule {
 
     @Provides
     @Singleton
-    fun provideWordInfoDatabase(app: Application): WordInfoDatabase{
+    fun provideWordInfoDatabase(app: Application): WordInfoDatabase {
         return Room.databaseBuilder(
-            app,WordInfoDatabase::class.java,"word_db"
-        ).addTypeConverter(GsonParser(Gson()))
+            app, WordInfoDatabase::class.java, "word_db"
+        ).addTypeConverter(Converters(GsonParser(Gson())))
             .build()
     }
 

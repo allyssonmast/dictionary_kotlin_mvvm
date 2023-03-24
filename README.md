@@ -14,7 +14,9 @@ The app uses Clean Architecture, MVVM, Hilt, and Retrofit.
 
 ## Layers
 Presentation layer: responsible for rendering the UI and receiving user input. This layer is built using Jetpack Compose and follows the MVVM pattern.
+
 Domain layer: responsible for business logic and use cases. This layer uses Clean Architecture principles to ensure testability and maintainability.
+
 Data layer: responsible for data retrieval and caching. This layer uses Retrofit to retrieve data from the Merriam-Webster Dictionary API and Room for caching.
 
 # Getting Started
